@@ -1,0 +1,18 @@
+body {
+    background-color: lightslategray;
+    color: rgb(10, 3, 46);
+  }
+  h1 {
+    color:blue;
+  }
+.header {
+    color: red;
+    font-weight: bold;
+}
+a:link {
+    color: pink;
+  }
+#profile {
+    color:white
+    font-weight: bold;
+}
