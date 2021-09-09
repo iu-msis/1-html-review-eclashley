@@ -1,18 +1,18 @@
-body {
-    background-color: lightgray;
-    color: rgb(10, 3, 46);
-  }
+#profile {
+  color:white
+  font-weight: bold;
+}
 h1 {
     color:blue;
+  }
+body {
+    background-color: lightgray;
+    color: purple;
   }
 .header {
     color: red;
     font-weight: bold;
 }
 a:link {
-    color: pink;
+    color: royalblue;
   }
-#profile {
-    color:white
-    font-weight: bold;
-}
