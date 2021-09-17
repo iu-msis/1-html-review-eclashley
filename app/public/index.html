@@ -34,10 +34,6 @@
 
   <div class="col col-8" id="Profile">
     <h3>Second of two columns</h3>
-    <ul>
-      <li v-for="item in list">{{ item }}</li>
-    </ul>
-    <p>{{ message }}</p>
     <p>{{ result.name }}</p>
   </div>
 
@@ -48,7 +44,7 @@
   <p><h2 class="profile">Country of Origin:</h2> Sweden</p>
   <p><h2 class="profile">Birthdate:</h2>12/16/2000 </p>
   <p><h2 class="profile">Age:</h2>20</p>
-  <p><h2 class="profile">Email Address:</h2> <a v-bind:href="'mailto:' + result.email">{{ result.email }}</a></p>
+  <p><h2 class="profile">Email Address:</h2><a v-bind:href="'mailto:' + result.email">{{ result.email }}</a></p>
   
   
   <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
