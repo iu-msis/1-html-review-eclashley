@@ -26,7 +26,7 @@
   </head>
   <body>
    <h1>Profile Information</h1>
-   <p class="header"> Here is Your Profile Information</p>
+   <p id="header"> Here is Your Profile Information</p>
 
    <a target="_blank" href="img/profilephoto.jpg">
     <img src="img/profilephoto.jpg" alt="User Pic">
@@ -45,11 +45,11 @@
 
 
   <!--Source: https://www.istockphoto.com/photos/swedish-man-->
-  <p><h2 id="profile">Name:</h2>Beret Bromage</p>
-  <p><h2 id="profile">Country of Origin:</h2> Sweden</p>
-  <p><h2 id="profile">Birthdate:</h2>12/16/2000 </p>
-  <p><h2 id="profile">Age:</h2>20</p>
-  <p><h2 id="profile">Email Address:</h2> <a href="mailto:bbromage0@discuz.net">bbromage0@discuz.net</a></p>
+  <p><h2 class="profile">Name:</h2>Beret Bromage</p>
+  <p><h2 class="profile">Country of Origin:</h2> Sweden</p>
+  <p><h2 class="profile">Birthdate:</h2>12/16/2000 </p>
+  <p><h2 class="profile">Age:</h2>20</p>
+  <p><h2 class="profile">Email Address:</h2> <a v-bind:href="'mailto:' + result.email">{{ result.email }}</a></p>
   
   
   <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
