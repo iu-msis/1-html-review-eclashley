@@ -1,8 +1,7 @@
 const Profile = {
   data() {
     return {
-      result: {},
-      message: "Waiting ..."
+      result: {}
     }
   },
   created() {
