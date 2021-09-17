@@ -31,6 +31,19 @@
    <a target="_blank" href="img/profilephoto.jpg">
     <img src="img/profilephoto.jpg" alt="User Pic">
   </a>
+
+  <div class="col col-8" id="Profile">
+    <h3>Second of two columns</h3>
+    <ul>
+      <li v-for="item in list">{{ item }}</li>
+    </ul>
+    <p>{{ message }}</p>
+    <p>{{ result.name }}</p>
+    <p><a v-bind:href="'mailto:' + result.email">{{ result.email }}</a></p>
+  </div>
+
+
+
   <!--Source: https://www.istockphoto.com/photos/swedish-man-->
   <p><h2 id="profile">Name:</h2>Beret Bromage</p>
   <p><h2 id="profile">Country of Origin:</h2> Sweden</p>
