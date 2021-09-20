@@ -28,11 +28,8 @@
    <h1>Profile Information</h1>
    <p id="header"> Here is Your Profile Information</p>
 
-   <a target="_blank" href= "" {{ result.picture.thumbnail}}>
-    <img src="img/profilephoto.jpg" alt="User Pic">
-  </a>
-
   <div class="col col-8" id="Profile">
+    <img v-bind:src="result.picture.large" alt="User Pic">
     <p><h2 class="profile">Name:</h2> {{ result.name.first }} {{ result.name.last }}</p>
     <p><h2 class="profile">Country of Origin:</h2> {{ result.location.state }}</p>
     <p><h2 class="profile">Birthdate:</h2> {{ prettyBirthday }}</p>
@@ -41,8 +38,6 @@
   </div>
 
 
-
-  <!--Source: https://www.istockphoto.com/photos/swedish-man-->
 
   
   
