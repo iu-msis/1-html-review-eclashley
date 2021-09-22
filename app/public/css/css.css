@@ -1,6 +1,7 @@
 #header {
   color: red;
   font-weight: bold;
+}
 
 .profile {
   color:white
@@ -17,8 +18,6 @@ body {
     background-color: lightgray;
     color: purple;
   }
-
-}
 a:link {
     color: royalblue;
   }

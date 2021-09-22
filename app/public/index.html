@@ -29,12 +29,16 @@
    <p id="header"> Here is Your Profile Information</p>
 
   <div class="col col-8" id="Profile">
+
     <img v-bind:src="result.picture.large" alt="User Pic">
     <p><h2 class="profile">Name:</h2> {{ result.name.first }} {{ result.name.last }}</p>
     <p><h2 class="profile">Country of Origin:</h2> {{ result.location.state }}</p>
     <p><h2 class="profile">Birthdate:</h2> {{ prettyBirthday }}</p>
     <p><h2 class="profile">Age:</h2>{{ result.dob.age }}</p>
     <p><h2 class="profile">Email Address:</h2><a v-bind:href="'mailto:' + result.email">{{ result.email }}</a></p>
+    <form v-on:submit.prevent="fetchUserData">
+      <button type="submit">Refresh</button>
+    </form>
   </div>
 
 
