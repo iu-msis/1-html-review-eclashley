@@ -1,14 +1,12 @@
 <?php
 
 $num = 2;
-$foo = $num . " be";
-$bar = "or not to be";
+$foo = $num ." be";
+$bar = "or not " .$num. " be";
 
-
-echo $foo . ' '. $bar. "\n";
+echo $foo . ' ' . $bar . "\n";
 
 echo $num * $num * $num;
-
 
 $arr = [
     "first" => "Tom",
@@ -18,33 +16,40 @@ $arr = [
 
 $arr2 = [1,1,2,3,5,8];
 
+
 if (true) {
     echo "\nTRUE\n";
 }
 
-while (true){
-    //This what it doesn't actually do anything
+while (true) {
+    //This way it doesn't actually do anything
     break;
 }
 
-/*
-echo "<ul>";
-foreach($arr as $key=>$val){
-    echo "<li>".$key . " is " .$val."</li>";
-}
-echo "</ul>";
-*/
+# This is also a comment
 
-function printAndEncode ( $val ){
+/* This is a 
+multi-line 
+comment */
+
+// echo "<ul>";
+// foreach($arr as $key=>$val) {
+//     echo "<li>".$key ." is ".$val."</li>";
+// }
+// echo "</ul>";
+
+function printAndEncode( $val ) {
     echo json_encode(
-        $val,
+        $val, 
         JSON_PRETTY_PRINT|JSON_THROW_ON_ERROR
-);
+    );
 }
 
-// ==== 
-// Naming Convestions
+// ====
+// Naming conventions
 
-/* JS and PHP: camelCase
+// JS & PHP : camelCase
 
-other options: PascalCase, snake_case, kebab-case
+// PascalCase
+// snake_case
+// kebab-case
