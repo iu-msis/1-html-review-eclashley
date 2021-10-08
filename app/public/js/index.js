@@ -3,7 +3,7 @@ const Profile = {
   data() {
     return {
       result: {},
-      message: "Waiting ..."
+      books: []
     }
   },
   computed: {
@@ -13,6 +13,10 @@ const Profile = {
       }
   },
   methods: {
+    prettyDollar(n) {
+      const d = new Intl.NumberFormat("en-US").format(n);
+      return "$ " + d;
+    },
       fetchUserData(){
               //Method 1:
       fetch('https://randomuser.me/api/')
