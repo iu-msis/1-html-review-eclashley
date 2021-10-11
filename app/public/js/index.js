@@ -3,7 +3,6 @@ const Profile = {
   data() {
     return {
       result: {},
-      books: []
     }
   },
   computed: {
