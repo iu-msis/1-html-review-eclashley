@@ -62,30 +62,36 @@
 
       <br>
       <h2> Add a Book Here</h2>
-      <form>
+      <form v-on:submit.prevent="postBook"></form>
         <div class="form-group">
           <label for="Title">Title</label>
-          <input type="text" class="form-control" id="Title">
+          <input type="text" v-model="bookForm.Title"
+          class="form-label" id="Title">
         </div>
         <div class="form-group">
           <label for="Author">Author(s)</label>
-          <input type="text" class="form-control" id="Author">
+          <input type="text" v-model="bookForm.Author"
+          class="form-label" id="Author">
         </div>
         <div class="form-group">
             <label for="YrPub">Year Published</label>
-          <input type="number" class="form-control" id="YrPub">
+          <input type="number" v-model="bookForm.YrPub"
+          class="form-label" id="YrPub">
         </div>
         <div class="form-group">
             <label for="Publisher">Author(s)</label>
-            <input type="text" class="form-control" id="Publisher">
+            <input type="text" v-model="bookForm.Publisher"
+            class="form-label" id="Publisher">
         </div>
         <div class="form-group">
             <label for="PageCt">Page Count</label>
-            <input type="text" class="form-control" id="PageCt">
+            <input type="text" v-model="bookForm.PageCt"
+            class="form-label" id="PageCt">
         </div>
         <div class="form-group">
             <label for="Price">MSRP</label>
-            <input type="num" class="form-control" id="P">
+            <input type="num" v-model="bookForm.Price"
+            class="form-control" id="Price">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
