@@ -28,29 +28,7 @@ const Profile = {
       .catch( (error) => {
           console.error(error);
       });
-  },
-  postNewBook(evt) {
-    //this.bookForm.bookId = this.selectedStudent.id;        
-    
-    console.log("Posting!", this.offerForm);
-
-    fetch('api/offer/create.php', {
-        method:'POST',
-        body: JSON.stringify(this.bookForm),
-        headers: {
-          "Content-Type": "application/json; charset=utf-8"
-        }
-      })
-      .then( response => response.json() )
-      .then( json => {
-        console.log("Returned from post:", json);
-        // TODO: test a result was returned!
-        this.offers = json;
-        
-        // reset the form
-        this.offerForm = {};
-      });
-    }
+  }
 },
   created() {
 

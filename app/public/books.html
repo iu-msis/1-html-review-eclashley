@@ -57,7 +57,6 @@
                 </tr>
             </tbody>
         </table>    
-    </div>
 
 
       <br>
@@ -79,7 +78,7 @@
           class="form-label" id="YrPub">
         </div>
         <div class="form-group">
-            <label for="Publisher">Author(s)</label>
+            <label for="Publisher">Publisher</label>
             <input type="text" v-model="bookForm.Publisher"
             class="form-label" id="Publisher">
         </div>
@@ -91,7 +90,7 @@
         <div class="form-group">
             <label for="Price">MSRP</label>
             <input type="num" v-model="bookForm.Price"
-            class="form-control" id="Price">
+            class="form-label" id="Price">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
@@ -101,5 +100,6 @@
         new Tablesort(document.getElementById('bookTable'));
       </script>
       <script src="js/book.js"></script>
+    </div>
   </body>
 </html>
