@@ -46,7 +46,5 @@ const Book = {
     created() {
         this.fetchBookData();
     }
-  
   }
-  
   Vue.createApp(Book).mount('#BookApp');
