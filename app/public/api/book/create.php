@@ -32,11 +32,12 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'INSERT INTO book (title, author, yr_published, publisher , pg_ct, msrp )
-  VALUES (?, ?, ?, ?, ?, ?)'
+  'INSERT INTO book (id, title, author, yr_published, publisher , pg_ct, msrp )
+  VALUES (?, ?, ?, ?, ?, ?, ?)'
 );
 
 $stmt->execute([
+  $_POST['id'],
   $_POST['title'],
   $_POST['author'],
   $_POST['yr_published'],
