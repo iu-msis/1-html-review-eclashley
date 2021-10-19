@@ -32,17 +32,17 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'INSERT INTO book (Title, Author, YrPub, Publisher , PageCt, Price )
+  'INSERT INTO book (title, author, yr_published, publisher , pg_ct, msrp )
   VALUES (?, ?, ?, ?, ?, ?)'
 );
 
 $stmt->execute([
-  $_POST['Title'],
-  $_POST['Author'],
-  $_POST['YrPub'],
-  $_POST['Publisher'],
-  $_POST['PageCt'],
-  $_POST['Price']
+  $_POST['title'],
+  $_POST['author'],
+  $_POST['yr_published'],
+  $_POST['publisher'],
+  $_POST['pg_ct'],
+  $_POST['msrp']
 ]);
 
 // Get auto-generated PK from DB
