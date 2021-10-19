@@ -23,7 +23,7 @@ const Book = {
             })
         },
         postNewBook(evt) {        
-            console.log("Posting!", this.bookForm);
+            // console.log("Posting!", this.bookForm);
         
             fetch('api/book/create.php', {
                 method:'POST',
