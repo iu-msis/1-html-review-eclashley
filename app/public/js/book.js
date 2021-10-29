@@ -2,7 +2,8 @@ const Book = {
     data() {
       return {
         book: [],
-        bookForm:{}
+        bookForm:{},
+        selectedBook: null
       }
     },
     computed: {},
@@ -41,6 +42,52 @@ const Book = {
                 // reset the form
                 this.bookForm = {};
               });
+            },
+          postEditBook(evt) {
+              this.bookForm.id = this.selectedBook.id;       
+              
+              console.log("Updating!", this.bookForm);
+      
+              fetch('api/book/update.php', {
+                  method:'POST',
+                  body: JSON.stringify(this.bookForm),
+                  headers: {
+                    "Content-Type": "application/json; charset=utf-8"
+                  }
+                })
+                .then( response => response.json() )
+                .then( json => {
+                  console.log("Returned from post:", json);
+                  // TODO: test a result was returned!
+                  this.book = json;
+                  
+                  this.resetBookForm();
+                });
+            },
+            postDeleteBook(b) {
+              if (!confirm("Are you sure you want to delete the book from "+b.author+"?")) {
+                  return;
+              }
+              
+              fetch('api/book/delete.php', {
+                  method:'POST',
+                  body: JSON.stringify(b),
+                  headers: {
+                    "Content-Type": "application/json; charset=utf-8"
+                  }
+                })
+                .then( response => response.json() )
+                .then( json => {
+                  console.log("Returned from post:", json);
+                  // TODO: test a result was returned!
+                  this.book = json;
+                  
+                  this.resetBookForm();
+                });
+            },
+          resetBookForm() {
+            this.selectedBook = null;
+            this.bookForm = {};
             }
     },
     created() {
