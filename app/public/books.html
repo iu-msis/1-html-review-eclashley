@@ -56,7 +56,8 @@
             </tr>
           </thead>
             <tbody>
-                <tr v-for="book in book">
+                <tr v-for="book in book" v-on:click="selectBook(book)"
+                :class="['book', {selected: selectedBook && book.id == selectedBook.id}]">
                     <td>{{ book.id }}</td>
                     <td>{{ book.title }}</td>
                     <td>{{ book.author }}</td>
@@ -66,7 +67,7 @@
                     <td>{{ prettyDollar(book.msrp) }}</td>
                     <td>
                     <button type="button" class="btn btn-outline-secondary btn-sm"
-                            v-on:click="selectOffer(book))">Edit</button>
+                            v-on:click="selectBook(book)">Edit</button>
                           <button type="button" class="btn btn-outline-secondary btn-sm"
                             v-on:click="postDeleteBook(book)">Delete</button>
                           </td>
@@ -77,7 +78,7 @@
 
       <br>
       <h2> Add a Book Here</h2>
-      <form v-on:submit.prevent="postNewBook">
+      <form v-on:submit.prevent="postBook">
         <div class="form-group">
           <label for="Title">Title</label>
           <input type="text" v-model="bookForm.title"
@@ -108,7 +109,10 @@
             <input type="num" v-model="bookForm.msrp"
             class="form-control" id="msrp">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">{{ selectedBook === null ? "Add" : "Edit" }}</button>
+        <button type="button" class="btn btn-outline-secondary" 
+                v-if="selectedBook"
+                v-on:click="resetBookForm">Cancel</button>
       </form>
     </div>
       <script src="js/tablesort.min.js"></script>

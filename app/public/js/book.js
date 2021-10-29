@@ -23,6 +23,13 @@ const Book = {
                 console.error(err);
             })
         },
+        postBook(evt) {
+          if (this.selectedBook === null) {
+              this.postNewBook(evt);
+          } else {
+              this.postEditBook(evt);
+          }
+        },
         postNewBook(evt) {        
             // console.log("Posting!", this.bookForm);
         
@@ -84,6 +91,10 @@ const Book = {
                   
                   this.resetBookForm();
                 });
+            },
+            selectBook(b) {
+              this.selectedBook = b;
+              this.bookForm = Object.assign({}, this.selectedBook);
             },
           resetBookForm() {
             this.selectedBook = null;
